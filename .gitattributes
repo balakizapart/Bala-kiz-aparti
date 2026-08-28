@@ -1,0 +1,11 @@
+# Satir sonlarini normalize et: depoda LF, Windows calisma kopyasinda dogal.
+# Boylece Windows/Mac/Linux arasinda sahte diff cikmaz.
+* text=auto eol=lf
+
+# Ikili dosyalara dokunma.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp4 binary
+*.ico binary
