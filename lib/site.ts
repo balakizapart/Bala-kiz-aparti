@@ -22,8 +22,8 @@ export const site = {
       district: "Tepebaşı",
       city: "Eskişehir",
       postalCode: "26170",
-      lat: 39.7757,
-      lng: 30.5142,
+      lat: 39.784200,
+      lng: 30.511268,
       maps: "https://www.google.com/maps/search/?api=1&query=Bala+K%C4%B1z+Apart+Akmescit+Sokak+No:4+Tepeba%C5%9F%C4%B1+Eski%C5%9Fehir",
       directions:
         "https://www.google.com/maps/dir/?api=1&destination=Bala+K%C4%B1z+Apart+Akmescit+Sokak+No%3A4+Tepeba%C5%9F%C4%B1+Eski%C5%9Fehir",
@@ -35,8 +35,8 @@ export const site = {
       district: "Tepebaşı",
       city: "Eskişehir",
       postalCode: "26170",
-      lat: 39.7762,
-      lng: 30.5133,
+      lat: 39.784653,
+      lng: 30.510685,
       maps: "https://www.google.com/maps/search/?api=1&query=A%C5%9F%C3%A7%C4%B1+Sokak+No:6+Tepeba%C5%9F%C4%B1+Eski%C5%9Fehir",
       directions:
         "https://www.google.com/maps/dir/?api=1&destination=A%C5%9F%C3%A7%C4%B1+Sokak+No%3A6+Tepeba%C5%9F%C4%B1+Eski%C5%9Fehir",
