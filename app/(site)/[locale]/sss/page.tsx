@@ -69,15 +69,11 @@ const groups: Record<Locale, Group[]> = {
         },
         {
           q: "Sözleşme kaç aylık?",
-          a: "Standart sözleşme 9 aylıktır (Eylül–Haziran). Yaz döneminde kalmak isteyenler için aylık seçenek de var.",
+          a: "Standart sözleşme 10 aylıktır (Eylül-Haziran). Yaz döneminde kalmak isteyenler için aylık seçenek de var.",
         },
         {
           q: "Depozito alınıyor mu?",
           a: "Evet, bir aylık kira tutarında depozito alıyoruz. Sözleşme süresi dolduğunda, odada olağan kullanım dışında bir hasar yoksa ve ödemeler tamamlandıysa depozito çıkış gününden itibaren en geç on beş gün içinde iade edilir.",
-        },
-        {
-          q: "Vazgeçersem ne oluyor?",
-          a: "Taşınmadan önce vazgeçersen ön kayıt bir bağlayıcılık taşımaz. Sözleşme başladıktan sonra çıkmak istersen bir ay önceden bildirim yeterlidir; bildirim süresine uyulduğunda depozito kesintisi uygulanmaz.",
         },
       ],
     },
@@ -95,10 +91,6 @@ const groups: Record<Locale, Group[]> = {
         {
           q: "Kayıt için hangi belgeler gerekiyor?",
           a: "Kimlik fotokopisi, öğrenci belgesi ve veli iletişim bilgisi yeterlidir. On sekiz yaşından küçük öğrencilerde sözleşmeyi veli imzalar. Belgeleri kayıt günü getirebilirsin; ön kayıt için hiçbir belgeye gerek yoktur.",
-        },
-        {
-          q: "Ön kayıt beni bağlar mı?",
-          a: "Hayır. Ön kayıt sadece seninle iletişime geçip sana uygun odayı ayırabilmemiz için. İstediğin an vazgeçebilirsin.",
         },
       ],
     },
@@ -164,15 +156,11 @@ const groups: Record<Locale, Group[]> = {
         },
         {
           q: "How long is the contract?",
-          a: "The standard contract is nine months (September to June). A monthly option is available for those who want to stay over the summer.",
+          a: "The standard contract is ten months (September to June). A monthly option is available for those who want to stay over the summer.",
         },
         {
           q: "Is there a deposit?",
           a: "Yes, a deposit equal to one month's rent. At the end of the contract, if there is no damage beyond normal use and payments are complete, the deposit is returned within fifteen days of the move-out date.",
-        },
-        {
-          q: "What if I change my mind?",
-          a: "A booking request is not binding before you move in. Once the contract has started, one month's notice is enough; if you give that notice, nothing is deducted from your deposit.",
         },
       ],
     },
@@ -190,10 +178,6 @@ const groups: Record<Locale, Group[]> = {
         {
           q: "Which documents do I need to register?",
           a: "A copy of your ID, a student certificate and a parent's contact details are enough. For students under eighteen the contract is signed by a parent. You can bring the documents on registration day; no document is needed for a booking request.",
-        },
-        {
-          q: "Does a booking request commit me to anything?",
-          a: "No. It simply lets us contact you and hold the room that suits you. You can change your mind at any time.",
         },
       ],
     },

@@ -75,7 +75,7 @@ export async function generateMetadata({
     path: "/iletisim",
     title:
       l === "tr"
-        ? "İletişim | Bala Kız Apartı Eskişehir Tepebaşı"
+        ? "İletişim | Eskişehir Tepebaşı Kız Apartı"
         : "Contact | Bala Girls' Residence, Tepebaşı, Eskişehir",
     description:
       l === "tr"

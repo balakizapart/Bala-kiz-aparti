@@ -19,7 +19,7 @@ export const faqTeaser = {
     },
     {
       q: "Sözleşme kaç aylık?",
-      a: "Standart sözleşme 9 aylıktır (Eylül–Haziran). Yaz döneminde kalmak isteyenler için aylık seçenek de var.",
+      a: "Standart sözleşme 10 aylıktır (Eylül-Haziran). Yaz döneminde kalmak isteyenler için aylık seçenek de var.",
     },
     {
       q: "Misafir kabul edilebiliyor mu?",
@@ -41,7 +41,7 @@ export const faqTeaser = {
     },
     {
       q: "How long is the contract?",
-      a: "The standard contract is nine months (September to June). A monthly option is available for those who want to stay over the summer.",
+      a: "The standard contract is ten months (September to June). A monthly option is available for those who want to stay over the summer.",
     },
     {
       q: "Are guests allowed?",

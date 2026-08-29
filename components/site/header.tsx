@@ -36,6 +36,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
               alt="Bala Kız Apartı"
               width={447}
               height={159}
+              sizes="101px"
               priority
               className="h-8 w-auto transition-transform duration-500 ease-(--ease-spring) group-hover/brand:scale-[1.04] sm:h-9"
             />

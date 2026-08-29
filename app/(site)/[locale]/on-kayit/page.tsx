@@ -45,7 +45,7 @@ export async function generateMetadata({
     locale: l,
     path: "/on-kayit",
     title:
-      l === "tr" ? "Ön Kayıt | Bala Kız Apartı Eskişehir" : "Book a Room | Bala Girls' Residence",
+      l === "tr" ? "Ön Kayıt | Eskişehir Kız Öğrenci Apartı" : "Book a Room | Bala Girls' Residence",
     description:
       l === "tr"
         ? "Eskişehir Tepebaşı kız öğrenci apartı ön kayıt formu. Adınızı ve telefonunuzu bırakın, aynı gün içinde sizi arayalım. Ön kayıt hiçbir bağlayıcılık taşımaz."

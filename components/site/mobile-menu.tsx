@@ -113,6 +113,7 @@ export function MobileMenu({
                   alt="Bala Kız Apartı"
                   width={447}
                   height={159}
+                  sizes="90px"
                   className="h-8 w-auto"
                 />
                 <button
