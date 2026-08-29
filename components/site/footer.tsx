@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { localePath, type Locale, type Messages } from "@/lib/i18n";
 import { ContactFab } from "./contact-fab";
 import { LanguageSwitcher } from "./language-switcher";
+import { Logo } from "./logo";
 import { ReviewQr } from "./review-qr";
 
 const copy = {
@@ -83,12 +84,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
           <div className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {/* Marka */}
             <div>
-              <p className="font-display text-2xl font-extrabold leading-none">
-                Bala<span className="grad-text">.</span>
-              </p>
-              <p className="eyebrow mt-2">
-                {locale === "en" ? "Girls' Residence" : "Kız Apartı"}
-              </p>
+              <Logo className="items-start text-[14px]" />
               <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
                 {t.footer.tagline}
               </p>
@@ -104,7 +100,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="link-underline text-sm text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-grape"
+                      className="link-underline text-sm text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-pine"
                     >
                       {l.label}
                     </Link>
@@ -129,7 +125,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
                       href={b.directions}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="link-underline mt-1 inline-block font-medium text-fuchsia"
+                      className="link-underline mt-1 inline-block font-medium text-gold"
                     >
                       {c.directions} →
                     </a>
@@ -144,7 +140,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
               <address className="mt-5 space-y-2.5 text-sm not-italic">
                 <a
                   href={`tel:${site.phone}`}
-                  className="link-underline block font-semibold text-ink transition-colors duration-500 ease-(--ease-out-expo) hover:text-grape"
+                  className="link-underline block font-semibold text-ink transition-colors duration-500 ease-(--ease-out-expo) hover:text-pine"
                 >
                   {site.phoneDisplay}
                 </a>
@@ -158,13 +154,13 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
                 </a>
                 <a
                   href={`mailto:${site.email}`}
-                  className="link-underline block break-all text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-grape"
+                  className="link-underline block break-all text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-pine"
                 >
                   {site.email}
                 </a>
                 <a
                   href={`mailto:${site.email2}`}
-                  className="link-underline block break-all text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-grape"
+                  className="link-underline block break-all text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-pine"
                 >
                   {site.email2}
                 </a>
@@ -172,7 +168,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
                   href={site.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-underline block text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-fuchsia"
+                  className="link-underline block text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-gold"
                 >
                   {c.instagram}
                 </a>

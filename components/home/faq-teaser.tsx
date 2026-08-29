@@ -75,7 +75,7 @@ export function FaqTeaser({ locale }: { locale: Locale }) {
           <Reveal delay={0.1}>
             <Link
               href={localePath(locale, "/sss")}
-              className="link-underline text-sm font-semibold text-fuchsia"
+              className="link-underline text-sm font-semibold text-gold"
             >
               {c.all} →
             </Link>

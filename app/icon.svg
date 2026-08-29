@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bala Kız Apart">
+  <!-- Sekme simgesi. Kare ve 16 pikselde okunmali, o yuzden broşürdeki
+       kunyenin sadece bina simgesi alindi: yazi bu boyutta okunmuyor.
+       Renkler brosurden olculdu: yesil #013a3e, gold #a97e2d. -->
+  <rect width="64" height="64" rx="14" fill="#013a3e"/>
+  <g fill="#c9a03c">
+    <!-- Orta kule -->
+    <path d="M32 11l7.5 9h-15L32 11z"/>
+    <rect x="25.5" y="21.5" width="13" height="24" rx="1"/>
+    <!-- Yan kanatlar -->
+    <path d="M18.5 18l5.5 6.5H13L18.5 18z"/>
+    <rect x="13.5" y="25.5" width="10" height="20" rx="1"/>
+    <path d="M45.5 18L51 24.5H40L45.5 18z"/>
+    <rect x="40.5" y="25.5" width="10" height="20" rx="1"/>
+    <!-- Taban -->
+    <rect x="10" y="46.5" width="44" height="4" rx="2"/>
+  </g>
+  <!-- Pencereler: govdeden oyuluyor -->
+  <g fill="#013a3e">
+    <rect x="27.5" y="25" width="3.5" height="5" rx=".7"/>
+    <rect x="33" y="25" width="3.5" height="5" rx=".7"/>
+    <rect x="27.5" y="33" width="3.5" height="5" rx=".7"/>
+    <rect x="33" y="33" width="3.5" height="5" rx=".7"/>
+    <rect x="15.5" y="30" width="2.8" height="4.5" rx=".7"/>
+    <rect x="19.7" y="30" width="2.8" height="4.5" rx=".7"/>
+    <rect x="42.5" y="30" width="2.8" height="4.5" rx=".7"/>
+    <rect x="46.7" y="30" width="2.8" height="4.5" rx=".7"/>
+  </g>
+</svg>

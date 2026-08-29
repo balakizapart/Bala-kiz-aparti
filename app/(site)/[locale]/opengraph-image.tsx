@@ -28,7 +28,7 @@ export default async function OpengraphImage({
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#faf7f2",
+          background: "#f5f2ed",
           fontFamily: "sans-serif",
           position: "relative",
         }}
@@ -42,7 +42,7 @@ export default async function OpengraphImage({
             width: 620,
             height: 620,
             borderRadius: 9999,
-            background: "linear-gradient(135deg, #7c3aed 0%, #e5228f 60%, #ff9d6e 100%)",
+            background: "linear-gradient(135deg, #013a3e 0%, #a97e2d 60%, #ca9d42 100%)",
             opacity: 0.24,
           }}
         />
@@ -54,14 +54,14 @@ export default async function OpengraphImage({
             width: 520,
             height: 520,
             borderRadius: 9999,
-            background: "linear-gradient(135deg, #e5228f 0%, #ff9d6e 100%)",
+            background: "linear-gradient(135deg, #a97e2d 0%, #ca9d42 100%)",
             opacity: 0.18,
           }}
         />
 
         {/* Üst: marka */}
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ fontSize: 40, fontWeight: 800, color: "#171310", letterSpacing: -1 }}>
+          <div style={{ fontSize: 40, fontWeight: 800, color: "#14201e", letterSpacing: -1 }}>
             Bala
           </div>
           <div
@@ -69,14 +69,14 @@ export default async function OpengraphImage({
               width: 14,
               height: 14,
               borderRadius: 9999,
-              background: "linear-gradient(135deg, #7c3aed, #e5228f)",
+              background: "linear-gradient(135deg, #013a3e, #a97e2d)",
             }}
           />
           <div
             style={{
               fontSize: 20,
               fontWeight: 700,
-              color: "#7e6b9b",
+              color: "#5f7370",
               letterSpacing: 3,
               textTransform: "uppercase",
             }}
@@ -91,7 +91,7 @@ export default async function OpengraphImage({
             style={{
               fontSize: 78,
               fontWeight: 800,
-              color: "#171310",
+              color: "#14201e",
               lineHeight: 1.02,
               letterSpacing: -3,
               maxWidth: 900,
@@ -101,7 +101,7 @@ export default async function OpengraphImage({
               ? "Kendine ait bir oda, şehrin tam merkezinde."
               : "A room of your own, in the heart of the city."}
           </div>
-          <div style={{ fontSize: 28, color: "#4a423b", maxWidth: 860, lineHeight: 1.4 }}>
+          <div style={{ fontSize: 28, color: "#45514f", maxWidth: 860, lineHeight: 1.4 }}>
             {tr
               ? "Espark karşısı · Tramvaya 1 dk · Anadolu Üniversitesi 5 dk"
               : "Across from Espark · 1 min to the tram · 5 min to Anadolu University"}
@@ -114,16 +114,16 @@ export default async function OpengraphImage({
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            borderTop: "2px solid #e7e0d6",
+            borderTop: "2px solid #e3ded3",
             paddingTop: 26,
             fontSize: 24,
-            color: "#4a423b",
+            color: "#45514f",
           }}
         >
           <div style={{ display: "flex" }}>
             {site.district}, {site.city}
           </div>
-          <div style={{ display: "flex", fontWeight: 700, color: "#7c3aed" }}>
+          <div style={{ display: "flex", fontWeight: 700, color: "#013a3e" }}>
             {site.phoneDisplay}
           </div>
         </div>

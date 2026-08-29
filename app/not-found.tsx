@@ -17,10 +17,10 @@ export default function NotFound() {
         <main className="relative flex min-h-dvh items-center overflow-hidden">
           {/* Renk lekeleri */}
           <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-            <span className="blob -left-40 -top-40 h-[34rem] w-[34rem]" style={{ background: "#c4a6ff" }} />
+            <span className="blob -left-40 -top-40 h-[34rem] w-[34rem]" style={{ background: "#a9cdc8" }} />
             <span
               className="blob right-[-6rem] top-20 h-[26rem] w-[26rem]"
-              style={{ background: "#ffb6dd", animationDelay: "-7s" }}
+              style={{ background: "#e7d1a0", animationDelay: "-7s" }}
             />
           </div>
 
@@ -45,13 +45,13 @@ export default function NotFound() {
               </Link>
               <Link
                 href="/odalar"
-                className="inline-flex h-14 items-center rounded-(--radius-pill) border border-line bg-paper/60 px-8 text-[0.9375rem] font-semibold text-ink backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-grape hover:text-grape"
+                className="inline-flex h-14 items-center rounded-(--radius-pill) border border-line bg-paper/60 px-8 text-[0.9375rem] font-semibold text-ink backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-pine hover:text-pine"
               >
                 Odaları gör
               </Link>
               <a
                 href={`tel:${site.phone}`}
-                className="inline-flex h-14 items-center rounded-(--radius-pill) px-6 text-[0.9375rem] font-semibold text-ink transition-colors duration-500 ease-(--ease-out-expo) hover:text-fuchsia"
+                className="inline-flex h-14 items-center rounded-(--radius-pill) px-6 text-[0.9375rem] font-semibold text-ink transition-colors duration-500 ease-(--ease-out-expo) hover:text-gold"
               >
                 {site.phoneDisplay}
               </a>
@@ -68,7 +68,7 @@ export default function NotFound() {
                   { href: "/on-kayit", label: "Ön Kayıt" },
                 ].map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="link-underline hover:text-grape">
+                    <Link href={l.href} className="link-underline hover:text-pine">
                       {l.label}
                     </Link>
                   </li>

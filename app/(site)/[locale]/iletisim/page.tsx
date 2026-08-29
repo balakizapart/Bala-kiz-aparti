@@ -140,7 +140,7 @@ export default async function ContactPage({
                       <dd>
                         <a
                           href={`tel:${site.phone}`}
-                          className="link-underline font-medium text-grape"
+                          className="link-underline font-medium text-pine"
                         >
                           {site.phoneDisplay}
                         </a>
@@ -151,7 +151,7 @@ export default async function ContactPage({
                       <dd>
                         <a
                           href={`mailto:${site.email}`}
-                          className="link-underline break-all font-medium text-grape"
+                          className="link-underline break-all font-medium text-pine"
                         >
                           {site.email}
                         </a>
@@ -162,7 +162,7 @@ export default async function ContactPage({
                       <dd>
                         <a
                           href={`mailto:${site.email2}`}
-                          className="link-underline break-all font-medium text-grape"
+                          className="link-underline break-all font-medium text-pine"
                         >
                           {site.email2}
                         </a>

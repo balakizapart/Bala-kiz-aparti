@@ -2,34 +2,35 @@
 
 /* ============================================================
    BALA KIZ APARTI: TASARIM SİSTEMİ
-   Yön: "Canlı & Modern": krem kağıt zemin, mor-pembe gradyan
-   imza, cesur tipografi, bol hareket. Genç, aydınlık, davetkâr.
+   Yön: apartın kendi basılı künyesi. Koyu yeşil + gold, krem kağıt
+   zemin, cesur tipografi, bol hareket. Renkler broşürden ölçüldü
+   (33183.jpg): yeşil #013a3e, gold #a97e2d, kağıt #f5f2ed.
    KURAL: buraya yeni token EKLENMEZ, mevcutlar kullanılır.
    ============================================================ */
 
 @theme {
   /*: Metin & yüzey -
      Taban nötr: sıcak krem kağıt + neredeyse siyah mürekkep.
-     Mor/pembe bu nötr zeminin ÜSTÜNDE vurgu olarak durur; böylece
-     renkler daha güçlü okunur, sayfa "her yeri mor" olmaz. */
-  --color-ink: #171310;          /* ana metin, sıcak siyah */
-  --color-ink-soft: #4a423b;
-  --color-muted: #837a70;
-  --color-line: #e7e0d6;         /* ince nötr ayraç */
-  --color-cream: #faf7f2;        /* sayfa zemini, sıcak krem */
+     Yeşil/gold bu nötr zeminin ÜSTÜNDE vurgu olarak durur; böylece
+     renkler daha güçlü okunur, sayfa "her yeri yeşil" olmaz. */
+  --color-ink: #14201e;          /* ana metin, yeşile çalan siyah */
+  --color-ink-soft: #45514f;
+  --color-muted: #7d8886;
+  --color-line: #e3ded3;         /* ince nötr ayraç */
+  --color-cream: #f5f2ed;        /* sayfa zemini: broşürün kağıt rengi */
   --color-paper: #ffffff;        /* kart zemini */
-  --color-sand: #f0eae0;         /* nötr dolgu, bölüm zeminleri */
-  --color-lilac: #f4ecff;        /* yumuşak mor dolgu (ölçülü kullan) */
-  --color-blush: #ffe9f5;        /* yumuşak pembe dolgu (ölçülü kullan) */
+  --color-sand: #ebe6da;         /* nötr dolgu, bölüm zeminleri */
+  --color-pine-tint: #e7efee;    /* yumuşak yeşil dolgu (ölçülü kullan) */
+  --color-gold-tint: #f7f0e0;    /* yumuşak gold dolgu (ölçülü kullan) */
 
   /*: Vurgular: */
-  --color-grape: #7c3aed;        /* birincil mor */
-  --color-grape-deep: #5b21b6;
-  --color-fuchsia: #e5228f;      /* ikincil pembe */
-  --color-fuchsia-deep: #b3186e;
-  --color-peach: #ff9d6e;        /* sıcak aksan */
-  --color-mint: #21c9a8;         /* taze aksan */
-  --color-sky: #4cb8f5;          /* serin aksan */
+  --color-pine: #013a3e;         /* birincil koyu yeşil, broşürden */
+  --color-pine-deep: #012528;
+  --color-gold: #a97e2d;         /* ikincil gold, broşürden */
+  --color-gold-deep: #866221;
+  --color-gold-light: #ca9d42;   /* broşürdeki açık gold, gradyan ucu */
+  --color-mint: #2f8f7c;         /* taze aksan, yeşile uyumlu */
+  --color-sky: #3f7f86;          /* serin aksan, yeşile uyumlu */
   --color-whatsapp: #25d366;     /* marka rengi: değiştirilmez */
   --color-whatsapp-deep: #128c4a;
 
@@ -63,7 +64,7 @@
   --radius-xl: 48px;
   --radius-pill: 999px;
 
-  /*: Gölge: mor tonlu, yumuşak: */
+  /*: Gölge: yeşil tonlu, yumuşak: */
   --shadow-soft: 0 1px 2px rgba(23, 19, 16, .05), 0 10px 30px -14px rgba(23, 19, 16, .16);
   --shadow-lift: 0 2px 6px rgba(23, 19, 16, .07), 0 30px 70px -28px rgba(23, 19, 16, .28);
   --shadow-glow: 0 18px 50px -14px rgba(229, 34, 143, .5);
@@ -94,10 +95,10 @@
     overflow-x: clip;
   }
 
-  ::selection { background: var(--color-fuchsia); color: #fff; }
+  ::selection { background: var(--color-gold); color: #fff; }
 
   :focus-visible {
-    outline: 2px solid var(--color-grape);
+    outline: 2px solid var(--color-pine);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -121,21 +122,21 @@
     color: var(--color-muted);
   }
 
-  /* İmza gradyan: mor'dan pembeye. Marka bunun üstünde duruyor. */
+  /* İmza gradyan: koyu yeşilden gold'a. Marka bunun üstünde duruyor. */
   .grad {
     background-image: linear-gradient(
       100deg,
-      var(--color-grape) 0%,
-      var(--color-fuchsia) 55%,
-      var(--color-peach) 100%
+      var(--color-pine) 0%,
+      var(--color-gold) 55%,
+      var(--color-gold-light) 100%
     );
   }
   .grad-text {
     background-image: linear-gradient(
       100deg,
-      var(--color-grape) 0%,
-      var(--color-fuchsia) 52%,
-      var(--color-peach) 100%
+      var(--color-pine) 0%,
+      var(--color-gold) 52%,
+      var(--color-gold-light) 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -158,7 +159,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(140deg, var(--color-grape), var(--color-fuchsia), var(--color-peach));
+    background: linear-gradient(140deg, var(--color-pine), var(--color-gold), var(--color-gold-light));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;

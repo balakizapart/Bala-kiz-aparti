@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion, useScroll } from "motion/react";
 import { Button } from "@/components/ui/primitives";
+import { Logo } from "./logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { localePath, type Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
@@ -75,11 +75,11 @@ export function MobileMenu({
         onClick={() => setOpen(true)}
         aria-label={labels.menu}
         aria-expanded={open}
-        className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper/70 backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-grape lg:hidden"
+        className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper/70 backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-pine lg:hidden"
       >
         <span aria-hidden className="flex flex-col gap-[5px]">
           <span className="block h-[2px] w-5 rounded-full bg-ink" />
-          <span className="block h-[2px] w-3.5 rounded-full bg-fuchsia" />
+          <span className="block h-[2px] w-3.5 rounded-full bg-gold" />
         </span>
       </button>
 
@@ -108,19 +108,12 @@ export function MobileMenu({
               className="absolute inset-y-0 right-0 flex w-[min(24rem,88vw)] flex-col bg-cream px-6 pb-8 pt-6 shadow-(--shadow-lift)"
             >
               <div className="flex items-center justify-between">
-                <Image
-                  src="/logo.png"
-                  alt="Bala Kız Apartı"
-                  width={447}
-                  height={159}
-                  sizes="90px"
-                  className="h-8 w-auto"
-                />
+                <Logo className="text-[12px]" />
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label={labels.close}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-line transition-colors duration-500 hover:border-fuchsia hover:text-fuchsia"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-line transition-colors duration-500 hover:border-gold hover:text-gold"
                 >
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
                     <path d="M6 6l12 12M18 6L6 18" />
@@ -140,7 +133,7 @@ export function MobileMenu({
                       <Link
                         href={it.href}
                         onClick={() => setOpen(false)}
-                        className="block border-b border-line py-4 font-display text-h3 font-semibold transition-colors duration-500 ease-(--ease-out-expo) hover:text-fuchsia"
+                        className="block border-b border-line py-4 font-display text-h3 font-semibold transition-colors duration-500 ease-(--ease-out-expo) hover:text-gold"
                       >
                         {it.label}
                       </Link>

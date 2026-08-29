@@ -5,7 +5,7 @@ import type { Locale } from "./i18n";
    OLANAKLAR: dairede ve odada ne var.
 
    Her maddenin kendi rengi var; renkler globals.css token'larından
-   seçilmiştir (mor-pembe palet + aksanlar). `tint` kartın zeminidir,
+   seçilmiştir (yeşil-gold palet + aksanlar). `tint` kartın zeminidir,
    `ink` ikonun rengidir. Yeni renk uydurmayın, listeden seçin.
    ============================================================ */
 
@@ -30,8 +30,8 @@ export const flatAmenities: Amenity[] = [
   },
   {
     icon: "tv",
-    ink: "#7c3aed",
-    tint: "#efe6ff",
+    ink: "#013a3e",
+    tint: "#e7efee",
     label: { tr: "Televizyon", en: "Television" },
     note: { tr: "Her dairede TV", en: "A TV in every flat" },
   },
@@ -65,8 +65,8 @@ export const flatAmenities: Amenity[] = [
   },
   {
     icon: "shower",
-    ink: "#e5228f",
-    tint: "#ffe3f2",
+    ink: "#a97e2d",
+    tint: "#f7f0e0",
     label: { tr: "7/24 Sıcak Su", en: "24/7 Hot Water" },
     note: { tr: "Sabah da gece de", en: "Morning and night" },
   },
@@ -86,8 +86,8 @@ export const flatAmenities: Amenity[] = [
   },
   {
     icon: "camera",
-    ink: "#4b3568",
-    tint: "#ece5f7",
+    ink: "#3f5b57",
+    tint: "#e6edeb",
     label: { tr: "7/24 Güvenlik Kamerası", en: "24/7 Security Cameras" },
     note: { tr: "Girişte ve her katta", en: "At the entrance and every floor" },
   },
@@ -111,15 +111,15 @@ export const flatAmenities: Amenity[] = [
 export const roomAmenities: Amenity[] = [
   {
     icon: "tv",
-    ink: "#7c3aed",
-    tint: "#efe6ff",
+    ink: "#013a3e",
+    tint: "#e7efee",
     label: { tr: "Televizyon", en: "Television" },
     note: { tr: "Her dairede TV", en: "A TV in every flat" },
   },
   {
     icon: "bed",
-    ink: "#7c3aed",
-    tint: "#efe6ff",
+    ink: "#013a3e",
+    tint: "#e7efee",
     label: { tr: "Yatak", en: "Bed" },
     note: { tr: "Tek kişilik, hazır", en: "Single, made up" },
   },
@@ -132,8 +132,8 @@ export const roomAmenities: Amenity[] = [
   },
   {
     icon: "chair",
-    ink: "#e5228f",
-    tint: "#ffe3f2",
+    ink: "#a97e2d",
+    tint: "#f7f0e0",
     label: { tr: "Rahat Sandalye", en: "Comfortable Chair" },
     note: { tr: "Uzun saatler için", en: "For the long hours" },
   },

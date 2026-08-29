@@ -31,11 +31,11 @@ export default function ReviewPage() {
           <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
             <span
               className="blob -left-40 -top-40 h-[34rem] w-[34rem]"
-              style={{ background: "#c4a6ff" }}
+              style={{ background: "#a9cdc8" }}
             />
             <span
               className="blob right-[-6rem] top-24 h-[26rem] w-[26rem]"
-              style={{ background: "#ffb6dd", animationDelay: "-7s" }}
+              style={{ background: "#e7d1a0", animationDelay: "-7s" }}
             />
           </div>
 
@@ -109,7 +109,7 @@ export default function ReviewPage() {
 
             {/* Geri dönüş */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
-              <Link href="/" className="link-underline font-semibold text-grape">
+              <Link href="/" className="link-underline font-semibold text-pine">
                 Siteye dön
               </Link>
               <a href={`tel:${site.phone}`} className="link-underline text-ink-soft">

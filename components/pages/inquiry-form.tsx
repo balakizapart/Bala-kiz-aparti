@@ -81,7 +81,7 @@ const copy = {
 const inputCls =
   "w-full rounded-(--radius-sm) border border-line bg-paper px-4 py-3 text-ink " +
   "placeholder:text-muted transition-[border-color,box-shadow] duration-300 ease-(--ease-out-expo) " +
-  "hover:border-ink-soft focus:border-grape focus:shadow-(--shadow-soft) aria-[invalid=true]:border-fuchsia-deep";
+  "hover:border-ink-soft focus:border-pine focus:shadow-(--shadow-soft) aria-[invalid=true]:border-gold-deep";
 
 function Field({
   id,
@@ -105,14 +105,14 @@ function Field({
           {label}
         </label>
         {required && (
-          <span className="text-fuchsia" aria-hidden>
+          <span className="text-gold" aria-hidden>
             *
           </span>
         )}
       </div>
       <div className="mt-2">{children}</div>
       {error ? (
-        <p id={`${id}-error`} className="mt-2 text-sm font-medium text-fuchsia-deep">
+        <p id={`${id}-error`} className="mt-2 text-sm font-medium text-gold-deep">
           {error}
         </p>
       ) : hint ? (

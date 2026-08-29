@@ -1,13 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
 import { localePath, type Locale, type Messages } from "@/lib/i18n";
 import { Button, Container } from "@/components/ui/primitives";
 import { LanguageSwitcher } from "./language-switcher";
+import { Logo } from "./logo";
 import { MobileMenu, StickyHeader } from "./mobile-menu";
 
 const copy = {
-  tr: { eyebrow: "Kız Apartı", home: "Ana sayfa" },
-  en: { eyebrow: "Girls' Residence", home: "Home" },
+  tr: { home: "Ana sayfa" },
+  en: { home: "Home" },
 } as const;
 
 export function Header({ locale, t }: { locale: Locale; t: Messages }) {
@@ -19,7 +19,6 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
     { href: localePath(locale, "/sss"), label: t.nav.faq },
     { href: localePath(locale, "/iletisim"), label: t.nav.contact },
   ];
-  const c = copy[locale];
 
   return (
     <StickyHeader>
@@ -28,20 +27,10 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
           {/* Marka: apartın kendi logosu */}
           <Link
             href={localePath(locale, "/")}
-            aria-label={`${c.home}, Bala Kız Apartı`}
+            aria-label={`${copy[locale].home}, Bala Kız Apartı`}
             className="group/brand -my-1 flex shrink-0 items-center gap-3 py-1"
           >
-            <Image
-              src="/logo.png"
-              alt="Bala Kız Apartı"
-              width={447}
-              height={159}
-              sizes="101px"
-              priority
-              className="h-8 w-auto transition-transform duration-500 ease-(--ease-spring) group-hover/brand:scale-[1.04] sm:h-9"
-            />
-            <span aria-hidden className="hidden h-6 w-px bg-line sm:block" />
-            <span className="eyebrow hidden sm:block">{c.eyebrow}</span>
+            <Logo className="text-[12px] transition-transform duration-500 ease-(--ease-spring) group-hover/brand:scale-[1.04] sm:text-[13px]" />
           </Link>
 
           {/* Masaüstü gezinme */}
@@ -51,7 +40,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
                 <li key={it.href}>
                   <Link
                     href={it.href}
-                    className="link-underline text-sm font-medium text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-grape"
+                    className="link-underline text-sm font-medium text-ink-soft transition-colors duration-500 ease-(--ease-out-expo) hover:text-pine"
                   >
                     {it.label}
                   </Link>

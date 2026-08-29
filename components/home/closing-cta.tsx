@@ -26,7 +26,7 @@ export function ClosingCta({ locale }: { locale: Locale }) {
 
   return (
     <Section className="relative overflow-hidden">
-      <Blobs tone="pink" />
+      <Blobs tone="gold" />
       <Container className="relative text-center">
         <SplitText
           as="h2"

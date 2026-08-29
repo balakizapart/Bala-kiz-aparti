@@ -23,7 +23,7 @@ export default function Error({
   return (
     <div className="relative flex min-h-[70vh] items-center overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <span className="blob -left-32 top-0 h-[28rem] w-[28rem]" style={{ background: "#ffb6dd" }} />
+        <span className="blob -left-32 top-0 h-[28rem] w-[28rem]" style={{ background: "#e7d1a0" }} />
       </div>
 
       <div className="relative mx-auto w-full max-w-3xl px-5 sm:px-8">
@@ -48,13 +48,13 @@ export default function Error({
           </button>
           <Link
             href="/"
-            className="inline-flex h-14 items-center rounded-(--radius-pill) border border-line bg-paper/60 px-8 text-[0.9375rem] font-semibold text-ink backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-grape hover:text-grape"
+            className="inline-flex h-14 items-center rounded-(--radius-pill) border border-line bg-paper/60 px-8 text-[0.9375rem] font-semibold text-ink backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-pine hover:text-pine"
           >
             Ana sayfaya dön
           </Link>
           <a
             href={`tel:${site.phone}`}
-            className="inline-flex h-14 items-center rounded-(--radius-pill) px-6 text-[0.9375rem] font-semibold text-ink transition-colors duration-500 ease-(--ease-out-expo) hover:text-fuchsia"
+            className="inline-flex h-14 items-center rounded-(--radius-pill) px-6 text-[0.9375rem] font-semibold text-ink transition-colors duration-500 ease-(--ease-out-expo) hover:text-gold"
           >
             {site.phoneDisplay}
           </a>

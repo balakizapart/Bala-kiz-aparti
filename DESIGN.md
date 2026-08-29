@@ -8,14 +8,14 @@
 Hedef okuyucu iki kişi: odayı beğenecek öğrenci ve güvenliğe karar verecek
 veli. Tasarım ikisine aynı anda konuşur — genç ve enerjik, ama ciddiyetsiz değil.
 
-**Ton:** aydınlık, davetkâr, kendinden emin. Mor→pembe gradyan markanın imzası.
+**Ton:** aydınlık, davetkâr, kendinden emin. Koyu yeşil→gold gradyan markanın imzası; renkler apartın basılı broşüründen ölçüldü.
 
 Öğrenci apartı sitelerinin klişeleri **yasak**: mavi gradyan, stok "mutlu
 öğrenci" kolajı, karusel bannerlar, ikon ızgarası, "Neden Biz?" kutuları.
 
 **İmza öğeleri**
 - Lila-beyaz kağıt zemin (`cream`) + ince gren (`.grain`, `<body>`'de).
-- `.grad` / `.grad-text` — mor→pembe→şeftali gradyan. Başlıklarda **son 1-2
+- `.grad` / `.grad-text` — koyu yeşil→gold→açık gold gradyan. Başlıklarda **son 1-2
   kelimede** kullanılır (`<SplitText gradientLastWords={2}>`), tamamında değil.
 - Yavaşça nefes alan renk lekeleri (`<Blobs>`) bölüm zeminlerinde.
 - Numaralı bölüm etiketleri: `<Eyebrow index="01">Odalar</Eyebrow>`.
@@ -42,9 +42,9 @@ Animasyon burada dekor değil, tasarımın kendisi. Ama **her biri**
 
 ## 3. Token'lar (`app/globals.css`)
 
-Renk: `ink`, `ink-soft`, `muted`, `line`, `cream`, `paper`, `lilac`, `blush`,
-`grape`, `grape-deep`, `fuchsia`, `fuchsia-deep`, `peach`, `mint`, `sky`,
-`whatsapp` → Tailwind'de `text-ink`, `bg-cream`, `border-line`, `bg-grape`…
+Renk: `ink`, `ink-soft`, `muted`, `line`, `cream`, `paper`, `pine-tint`, `gold-tint`,
+`pine`, `pine-deep`, `gold`, `gold-deep`, `gold-light`, `mint`, `sky`,
+`whatsapp` → Tailwind'de `text-ink`, `bg-cream`, `border-line`, `bg-pine`…
 
 **`whatsapp` rengi WhatsApp'ın markasıdır, değiştirilmez.** WhatsApp'a giden
 her buton `variant="whatsapp"` kullanır.

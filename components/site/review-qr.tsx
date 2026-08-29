@@ -84,7 +84,7 @@ export function ReviewQr({ locale }: { locale: Locale }) {
               href={googleReviewUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-underline font-semibold text-fuchsia"
+              className="link-underline font-semibold text-gold"
             >
               {c.cta}
             </a>

@@ -42,7 +42,7 @@ export function LifeStrip({ locale }: { locale: Locale }) {
   const c = copy[locale];
 
   return (
-    <Section className="relative overflow-hidden bg-blush/35">
+    <Section className="relative overflow-hidden bg-gold-tint/35">
       <Container size="wide">
         <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
@@ -60,7 +60,7 @@ export function LifeStrip({ locale }: { locale: Locale }) {
             <p className="text-lead text-pretty text-ink-soft">{c.lead}</p>
             <Link
               href={localePath(locale, "/galeri")}
-              className="link-underline mt-4 inline-block text-sm font-semibold text-fuchsia"
+              className="link-underline mt-4 inline-block text-sm font-semibold text-gold"
             >
               {c.gallery} →
             </Link>

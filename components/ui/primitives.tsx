@@ -267,8 +267,8 @@ export function Button({
   const variants = {
     primary: "grad text-white shadow-(--shadow-soft) hover:shadow-(--shadow-glow)",
     outline:
-      "border border-line bg-paper/60 text-ink backdrop-blur hover:border-grape hover:text-grape hover:shadow-(--shadow-soft)",
-    ghost: "text-ink hover:text-fuchsia",
+      "border border-line bg-paper/60 text-ink backdrop-blur hover:border-pine hover:text-pine hover:shadow-(--shadow-soft)",
+    ghost: "text-ink hover:text-gold",
     light: "bg-white text-ink shadow-(--shadow-soft) hover:shadow-(--shadow-lift)",
     whatsapp: "bg-whatsapp text-white shadow-(--shadow-soft) hover:bg-whatsapp-deep",
   }[variant];
@@ -503,15 +503,15 @@ export function TiltCard({
 /* ---------- Renk lekeleri zemini ---------- */
 export function Blobs({
   className,
-  tone = "violet",
+  tone = "pine",
 }: {
   className?: string;
-  tone?: "violet" | "pink" | "mixed";
+  tone?: "pine" | "gold" | "mixed";
 }) {
   const sets = {
-    violet: ["#c4a6ff", "#e9d5ff", "#a78bfa"],
-    pink: ["#ffb6dd", "#ffd6ea", "#ff9dc7"],
-    mixed: ["#c4a6ff", "#ffb6dd", "#ffd0ae"],
+    pine: ["#a9cdc8", "#d6e8e4", "#8dbcb5"],
+    gold: ["#e7d1a0", "#f3e5c6", "#d9be82"],
+    mixed: ["#a9cdc8", "#e7d1a0", "#d6e8e4"],
   }[tone];
 
   return (
@@ -571,7 +571,7 @@ export function Accordion({
                 <span
                   className={cn(
                     "font-display text-h3 font-semibold transition-colors duration-500 ease-(--ease-out-expo)",
-                    on ? "text-grape" : "group-hover:text-fuchsia"
+                    on ? "text-pine" : "group-hover:text-gold"
                   )}
                 >
                   {item.q}
@@ -580,7 +580,7 @@ export function Accordion({
                   aria-hidden
                   className={cn(
                     "mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-all duration-500 ease-(--ease-out-expo)",
-                    on ? "grad rotate-45 border-transparent text-white" : "border-line text-ink-soft group-hover:border-fuchsia"
+                    on ? "grad rotate-45 border-transparent text-white" : "border-line text-ink-soft group-hover:border-gold"
                   )}
                 >
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

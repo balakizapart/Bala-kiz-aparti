@@ -74,7 +74,7 @@ export function Location({ locale }: { locale: Locale }) {
                       href={b.directions}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="link-underline mt-3 inline-block text-sm font-semibold text-fuchsia"
+                      className="link-underline mt-3 inline-block text-sm font-semibold text-gold"
                     >
                       {locale === "tr" ? "Yol tarifi al" : "Get directions"} →
                     </a>

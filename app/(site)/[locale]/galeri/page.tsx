@@ -168,7 +168,7 @@ export default async function GalleryPage({
                         "transition-all duration-500 ease-(--ease-out-expo)",
                         on
                           ? "grad text-white shadow-(--shadow-soft)"
-                          : "border border-line text-ink-soft hover:border-grape hover:text-grape"
+                          : "border border-line text-ink-soft hover:border-pine hover:text-pine"
                       )}
                     >
                       {l === "tr" ? cat.tr : cat.en}

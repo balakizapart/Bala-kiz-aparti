@@ -9,8 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "qr": "node scripts/gen-qr.mjs",
-    "images": "node scripts/gen-image-sizes.mjs",
-    "logo": "node scripts/prep-logo.mjs"
+    "images": "node scripts/gen-image-sizes.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -70,7 +70,7 @@ export function Parents({ locale }: { locale: Locale }) {
 
   return (
     <Section className="relative overflow-hidden bg-ink text-white">
-      <Blobs tone="violet" className="opacity-25" />
+      <Blobs tone="pine" className="opacity-25" />
 
       <Container size="wide" className="relative">
         <div className="grid gap-6 lg:grid-cols-12 lg:items-end">

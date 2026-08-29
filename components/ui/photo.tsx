@@ -113,10 +113,10 @@ export function Photo({
 }
 
 const TONES = [
-  "radial-gradient(120% 95% at 18% 0%, #f3e6ff 0%, #ecd9fb 45%, #e2c9f5 100%)",
-  "radial-gradient(120% 95% at 80% 5%, #ffe6f3 0%, #ffd6ea 48%, #f8c5e0 100%)",
-  "radial-gradient(120% 95% at 40% 0%, #fff0e4 0%, #ffe0cd 45%, #f9d0c0 100%)",
-  "radial-gradient(120% 95% at 65% 10%, #e6f2ff 0%, #dbe9fd 48%, #cfe0f8 100%)",
+  "radial-gradient(120% 95% at 18% 0%, #e9f2f0 0%, #d8e8e4 45%, #c4dbd6 100%)",
+  "radial-gradient(120% 95% at 80% 5%, #f8f0dd 0%, #f1e4c4 48%, #e7d5a8 100%)",
+  "radial-gradient(120% 95% at 40% 0%, #f6f2e8 0%, #ebe4d3 45%, #ddd3bd 100%)",
+  "radial-gradient(120% 95% at 65% 10%, #eaf1f1 0%, #dbe7e6 48%, #c9dbd9 100%)",
 ];
 
 function PlaceholderArt({ label, tone }: { label: string; tone: number }) {
@@ -131,7 +131,7 @@ function PlaceholderArt({ label, tone }: { label: string; tone: number }) {
         className="absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #171310 0 1px, transparent 1px 10px)",
+            "repeating-linear-gradient(45deg, #14201e 0 1px, transparent 1px 10px)",
         }}
         aria-hidden
       />

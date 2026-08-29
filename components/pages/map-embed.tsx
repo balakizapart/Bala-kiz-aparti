@@ -69,12 +69,12 @@ export function MapEmbed({ locale, className }: { locale: Locale; className?: st
                   "transition-all duration-500 ease-(--ease-out-expo)",
                   sel
                     ? "grad text-white shadow-(--shadow-soft)"
-                    : "border border-line text-ink-soft hover:border-grape hover:text-grape"
+                    : "border border-line text-ink-soft hover:border-pine hover:text-pine"
                 )}
               >
                 <span
                   aria-hidden
-                  className={cn("h-1.5 w-1.5 rounded-full", sel ? "bg-white" : "bg-fuchsia")}
+                  className={cn("h-1.5 w-1.5 rounded-full", sel ? "bg-white" : "bg-gold")}
                 />
                 {b.name}
               </button>
