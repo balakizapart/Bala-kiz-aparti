@@ -5,26 +5,29 @@ import { defaultLocale, type Locale } from "./i18n";
 /**
  * Sayfa metadata üreticisi - her sayfa bunu kullanır.
  * canonical + hreflang + OG/Twitter tek yerden çıkar ki tutarsızlık olmasın.
+ *
+ * PAYLAŞIM GÖRSELİNİ BURADA TANIMLAMA. \`opengraph-image.tsx\` dosya
+ * kuralı görseli kendi üretir ve adresine bir hash ekler
+ * (\`/opengraph-image-1yhjss\`). Buraya elle \`images\` yazmak o otomatik
+ * etiketi eziyor ve olmayan bir adrese işaret ediyordu; WhatsApp ve
+ * Instagram önizlemelerinde görsel hiç çıkmıyordu. 2026-08-31'de bulundu.
  */
 export function pageMetadata({
   locale,
   path,
   title,
   description,
-  image,
   noindex,
 }: {
   locale: Locale;
   path: string; // "/odalar" - dil ön eki OLMADAN
   title: string;
   description: string;
-  image?: string;
   noindex?: boolean;
 }): Metadata {
   const trPath = path === "/" ? "/" : path;
   const enPath = path === "/" ? "/en" : `/en${path}`;
   const canonical = locale === defaultLocale ? trPath : enPath;
-  const ogImage = image ?? "/opengraph-image";
 
   return {
     title,
@@ -41,9 +44,8 @@ export function pageMetadata({
       url: canonical,
       title,
       description,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [ogImage] },
+    twitter: { card: "summary_large_image", title, description },
     robots: noindex
       ? { index: false, follow: false }
       : { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },

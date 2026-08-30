@@ -6,6 +6,9 @@ const PUBLIC_FILE = /\.[^/]+$/;
 /** Dil ön eki almayan, kökte duran yollar. */
 const BARE_ROUTES = ["/yorum"];
 
+/** Next'in ürettiği metadata görselleri; adlarına hash ekleniyor. */
+const METADATA_IMAGE = /\/(opengraph-image|twitter-image)(-[a-z0-9]+)?$/i;
+
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -28,8 +31,14 @@ export default function proxy(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  // "/tr/..." kanonik değil → ön eksiz sürüme kalıcı yönlendirme
-  if (pathname === `/${defaultLocale}` || pathname.startsWith(`/${defaultLocale}/`)) {
+  // "/tr/..." kanonik değil → ön eksiz sürüme kalıcı yönlendirme.
+  // Paylaşım görseli haricinde: Next o etiketi "/tr/opengraph-image-..."
+  // olarak yazıyor ve WhatsApp/Facebook robotlarının hepsi yönlendirme
+  // takip etmiyor. Bu adres doğrudan servis edilmeli.
+  if (
+    (pathname === `/${defaultLocale}` || pathname.startsWith(`/${defaultLocale}/`)) &&
+    !METADATA_IMAGE.test(pathname)
+  ) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(`/${defaultLocale}`.length) || "/";
     return NextResponse.redirect(url, 308);

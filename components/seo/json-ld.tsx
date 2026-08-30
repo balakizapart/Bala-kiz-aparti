@@ -11,8 +11,14 @@ export const ORG_ID = `${site.url}/#organization`;
 export const WEBSITE_ID = `${site.url}/#website`;
 export const buildingId = (id: string) => `${site.url}/#${id}`;
 
-/** OG görseli tek gerçek görselimiz; ayrı bir logo dosyası eklenirse burası değişir. */
-const IMAGE = `${site.url}/opengraph-image`;
+/**
+ * Yapısal veri sabit ve değişmeyen adres ister. \`opengraph-image.tsx\`
+ * üretilen görselin adresine hash ekliyor, o yüzden buraya yazılamaz.
+ * LOGO: markanın kare işaretinden üretilen sabit dosya.
+ * IMAGE: binanın gerçek fotoğrafı; Google işletme görseli olarak bunu kullanır.
+ */
+const LOGO = `${site.url}/logo.png`;
+const IMAGE = `${site.url}/images/bina-2-giris.jpg`;
 
 type Schema = Record<string, unknown>;
 
@@ -44,9 +50,9 @@ export function organizationSchema(): Schema {
     telephone: site.phone,
     logo: {
       "@type": "ImageObject",
-      url: IMAGE,
-      width: 1200,
-      height: 630,
+      url: LOGO,
+      width: 512,
+      height: 512,
     },
     image: IMAGE,
     sameAs: [site.instagram],
