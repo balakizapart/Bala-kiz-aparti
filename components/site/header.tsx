@@ -28,6 +28,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
           <Link
             href={localePath(locale, "/")}
             aria-label={`${copy[locale].home}, Bala Kız Apartı`}
+            data-hide-on-menu
             className="group/brand -my-1 flex shrink-0 items-center gap-3 py-1"
           >
             <Logo className="text-[12px] transition-transform duration-500 ease-(--ease-spring) group-hover/brand:scale-[1.04] sm:text-[13px]" />
@@ -50,19 +51,22 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
           </nav>
 
           <div className="flex items-center gap-3 sm:gap-5">
-            <LanguageSwitcher
-              locale={locale}
-              label={t.a11y.changeLanguage}
-              className="hidden sm:flex"
-            />
-            <Button
-              href={localePath(locale, "/on-kayit")}
-              variant="primary"
-              size="sm"
-              className="hidden sm:inline-flex"
-            >
-              {t.nav.reserve}
-            </Button>
+            {/* Menu acikken gizlenir: panelde ayni iki secenek zaten var. */}
+            <div data-hide-on-menu className="flex items-center gap-3 sm:gap-5">
+              <LanguageSwitcher
+                locale={locale}
+                label={t.a11y.changeLanguage}
+                className="hidden sm:flex"
+              />
+              <Button
+                href={localePath(locale, "/on-kayit")}
+                variant="primary"
+                size="sm"
+                className="hidden sm:inline-flex"
+              >
+                {t.nav.reserve}
+              </Button>
+            </div>
             <MobileMenu
               items={items}
               locale={locale}

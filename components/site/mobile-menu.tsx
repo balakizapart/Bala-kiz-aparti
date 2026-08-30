@@ -58,12 +58,16 @@ export function MobileMenu({
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    // Sayfanin kendi basligi perdenin arkasinda kaliyor ve panelin logosuyla
+    // yan yana gorunup birbirine karisiyordu. Menu acikken gizleniyor.
+    document.documentElement.dataset.menuOpen = "true";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     // ponytail: tam focus trap yerine ilk odaklanabilir öğeye odak + Esc.
     panelRef.current?.querySelector<HTMLElement>("a, button")?.focus();
     return () => {
       document.body.style.overflow = prev;
+      delete document.documentElement.dataset.menuOpen;
       document.removeEventListener("keydown", onKey);
     };
   }, [open]);
@@ -75,6 +79,7 @@ export function MobileMenu({
         onClick={() => setOpen(true)}
         aria-label={labels.menu}
         aria-expanded={open}
+        data-hide-on-menu
         className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper/70 backdrop-blur transition-colors duration-500 ease-(--ease-out-expo) hover:border-pine lg:hidden"
       >
         <span aria-hidden className="flex flex-col gap-[5px]">
@@ -96,7 +101,7 @@ export function MobileMenu({
               type="button"
               aria-label={labels.close}
               onClick={() => setOpen(false)}
-              className="absolute inset-0 bg-ink/40 backdrop-blur-sm"
+              className="absolute inset-0 bg-ink/72 backdrop-blur-md"
             />
 
             <motion.div
@@ -105,7 +110,7 @@ export function MobileMenu({
               animate={reduce ? { opacity: 1 } : { x: 0 }}
               exit={reduce ? { opacity: 0 } : { x: "100%" }}
               transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute inset-y-0 right-0 flex w-[min(24rem,88vw)] flex-col bg-cream px-6 pb-8 pt-6 shadow-(--shadow-lift)"
+              className="absolute inset-y-0 right-0 flex w-[min(24rem,88vw)] flex-col border-l border-line bg-cream px-6 pb-8 pt-6 shadow-(--shadow-lift)"
             >
               <div className="flex items-center justify-between">
                 <Logo className="text-[12px]" />

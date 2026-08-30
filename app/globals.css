@@ -192,6 +192,15 @@
     to   { transform: translate3d(-50%, 0, 0); }
   }
 
+  /* Mobil menü açıkken başlıktaki öğeler gizlenir: logo, TR/EN ve Ön Kayıt.
+     Hepsi panelde zaten var; perdenin arkasında kalınca panelin içeriğiyle
+     yan yana görünüp birbirine karışıyorlardı. Panel kendi kapatma
+     butonunu taşıdığı için hamburger butonu da gizlenebiliyor. */
+  html[data-menu-open] [data-hide-on-menu] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   /* Yavaşça nefes alan renk lekeleri: hero ve bölüm zeminleri */
   .blob {
     position: absolute;
