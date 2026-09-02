@@ -1,0 +1,18 @@
+# Netlify yapilandirmasi.
+#
+# Bu dosya arayuzdeki Build settings alanlarini EZER. Boylece proje
+# kimin hesabinda kurulursa kurulsun ayni sekilde derlenir; arayuzde
+# bir alan bos kalirsa site 404 vermez.
+#
+# Gecmis: musterinin projesinde build command bos kalmisti, Netlify
+# "No build steps found" deyip deponun kokunu yayinladi ve her adres
+# 404 verdi. Bu dosya o durumu imkansiz kiliyor.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Next.js calisma katmani. Bu eklenti olmadan `.next` klasoru duz dosya
+# gibi yayinlanir; sunucu tarafi sayfalar ve proxy.ts calismaz.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
