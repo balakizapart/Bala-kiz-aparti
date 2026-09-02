@@ -184,25 +184,20 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
           Dosya yokken bu blok hiç render edilmez. */}
       <Container size="wide" className="mt-20 sm:mt-28">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-          <Reveal className="lg:col-span-7">
+          <Reveal className="lg:col-span-4">
             <Eyebrow index="▸">{c.videoLabel}</Eyebrow>
             <h3 className="mt-5 font-display text-h2 font-bold text-balance">{c.videoTitle}</h3>
             <p className="mt-5 max-w-prose text-pretty text-ink-soft">{c.videoNote}</p>
           </Reveal>
-          {/* Video telefonla dikey çekildi (576x1024). 16:9 bir çerçeveye
-              koyulursa üstü altı kırpılıyor; bu yüzden kendi oranında ve
-              dar tutuluyor. Yeni video yatay gelirse burayı aspect-video
-              yapıp sütunları 7/5 yerine 4/8 çevirmek yeterli. */}
-          <Reveal delay={0.12} className="lg:col-span-5">
-            <div className="mx-auto w-full max-w-[19rem]">
-              <VideoBlock
-                src={VIDEO_SRC}
-                poster={VIDEO_POSTER}
-                label={c.videoLabel}
-                className="aspect-[9/16]"
-              />
-              {!VIDEO_SRC && (
-                <div className="grid aspect-[9/16] place-items-center rounded-(--radius-lg) border border-dashed border-line bg-sand/70 p-8 text-center">
+          <Reveal delay={0.12} className="lg:col-span-8">
+            <VideoBlock
+              src={VIDEO_SRC}
+              poster={VIDEO_POSTER}
+              label={c.videoLabel}
+              className="aspect-video"
+            />
+            {!VIDEO_SRC && (
+              <div className="grid aspect-video place-items-center rounded-(--radius-lg) border border-dashed border-line bg-sand/70 p-8 text-center">
                 <div>
                   <span
                     aria-hidden
@@ -218,10 +213,9 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
                   <p className="mt-2 text-sm text-muted">
                     {locale === "tr" ? "Çok yakında" : "Coming soon"}
                   </p>
-                  </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </Reveal>
         </div>
       </Container>
@@ -229,9 +223,12 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
   );
 }
 
-/* Tanıtım videosu. Kaynak WhatsApp'tan geldiği için zaten sıkıştırılmıştı
-   ve ön kamerayla AYNALI çekilmişti; tabeladaki "BALA KIZ APART" yazısı
-   ters okunuyordu. ffmpeg ile yatay çevrildi (hflip) ve yeniden kodlandı.
-   Kapak karesi videonun 2. saniyesinden alındı, marka orada okunuyor. */
+/* Tanıtım videosu. Kaynak WhatsApp'tan geldi: 576x1024 dikey, 969 kbps,
+   ön kamerayla AYNALI (tabeladaki "BALA KIZ APART" ters okunuyordu).
+   Tek geçişte işlendi: hflip ile ayna düzeltildi, 10-12. saniye çıkarıldı,
+   ses kaldırıldı, hqdn3d + unsharp ile temizlendi ve 1920x1080 yatay
+   çerçeveye oturtuldu. Dikey görüntü ortada kendi oranında duruyor,
+   yanlar bulanıklaştırılmış kopyayla dolduruluyor; böylece kare kırpılmıyor.
+   19.6 MB. Kaynak daha net bir dosya gelirse aynı komutla yenilenebilir. */
 const VIDEO_SRC: string | undefined = "/videos/tanitim.mp4";
 const VIDEO_POSTER: string | undefined = "/images/video-kapak.jpg";

@@ -22,7 +22,7 @@ export const imageSizes: Record<string, [number, number]> = {
   "/images/tek-kisilik-4.jpg": [2048, 1536],
   "/images/tek-kisilik-best-1.jpg": [2048, 1536],
   "/images/tek-kisilik-best-2.jpg": [2076, 1422],
-  "/images/video-kapak.jpg": [576, 1024],
+  "/images/video-kapak.jpg": [1280, 720],
 };
 
 /** Verilen yol için [genişlik, yükseklik]; bilinmiyorsa null. */
