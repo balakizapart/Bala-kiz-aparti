@@ -62,7 +62,7 @@ export const roomTypes: RoomType[] = [
     },
     photos: [
       { src: "/images/tek-kisilik-1.jpg", caption: { tr: "Tek kişilik oda", en: "Single room" } },
-      { src: "/images/mutfak-4.jpg", caption: { tr: "Dairenin mutfağı", en: "The flat's kitchen" } },
+      { src: "/images/tek-kisilik-mutfak.jpg", caption: { tr: "Dairenin mutfağı", en: "The flat's kitchen" } },
       { src: "/images/banyo-2.jpg", caption: { tr: "Daire banyosu", en: "Flat bathroom" } },
     ],
   },
@@ -97,8 +97,8 @@ export const roomTypes: RoomType[] = [
       en: "For first-year students who prefer company, and for a friendlier budget.",
     },
     photos: [
-      { src: "/images/iki-kisilik-1.webp", caption: { tr: "İki kişilik oda", en: "Twin room" } },
-      { src: "/images/mutfak-2.jpg", caption: { tr: "Dairenin mutfağı", en: "The flat's kitchen" } },
+      { src: "/images/iki-kisilik-oda.jpg", caption: { tr: "İki kişilik oda", en: "Twin room" } },
+      { src: "/images/iki-kisilik-mutfak.jpg", caption: { tr: "Dairenin mutfağı", en: "The flat's kitchen" } },
       { src: "/images/banyo-1.jpg", caption: { tr: "Daire banyosu", en: "Flat bathroom" } },
     ],
   },

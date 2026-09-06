@@ -62,8 +62,8 @@ const copy = {
 /* Hero kolajindaki uc fotograf. Sira: bina girisi (buyuk kare), oda, mutfak. */
 const PHOTOS = [
   "/images/bina-2-giris.jpg",
-  "/images/tek-kisilik-best-1.jpg",
-  "/images/mutfak-1.jpg",
+  "/images/hero-oda.jpg",
+  "/images/hero-mutfak.jpg",
 ] as const;
 
 export function Hero({ locale }: { locale: Locale }) {

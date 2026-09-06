@@ -54,6 +54,14 @@ export const gallery: GalleryItem[] = [
     },
   },
   {
+    src: "/images/hero-oda.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Tek kişilik oda; gardırop, yatak, pencere önünde çalışma masası ve televizyon",
+      en: "Single room with wardrobe, bed, a desk by the window and a television",
+    },
+  },
+  {
     src: "/images/tek-kisilik-1.jpg",
     category: "tek-kisilik",
     alt: {
@@ -86,6 +94,46 @@ export const gallery: GalleryItem[] = [
     },
   },
   {
+    src: "/images/tek-kisilik-5.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Odada boy aynası ve üç kapaklı gardırop",
+      en: "Full-length mirror and three-door wardrobe in the room",
+    },
+  },
+  {
+    src: "/images/tek-kisilik-6.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Dairenin mutfağı ve yemek masası; odaya ve banyoya açılan kapılar",
+      en: "The flat's kitchen and dining table, with doors to the room and bathroom",
+    },
+  },
+  {
+    src: "/images/tek-kisilik-7.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Gardırobun iç rafları ve yatağın altındaki saklama bölmesi",
+      en: "Wardrobe shelves and the storage compartment under the bed",
+    },
+  },
+  {
+    src: "/images/hero-mutfak.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Dairenin mutfağı; ocak, davlumbaz, çamaşır makinesi ve yemek masası",
+      en: "The flat's kitchen with cooker, extractor hood, washing machine and dining table",
+    },
+  },
+  {
+    src: "/images/tek-kisilik-mutfak.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Mutfak tezgâhı; evye, ocak, davlumbaz ve çamaşır makinesi",
+      en: "Kitchen worktop with sink, cooker, extractor hood and washing machine",
+    },
+  },
+  {
     src: "/images/mutfak-1.jpg",
     category: "tek-kisilik",
     alt: {
@@ -110,6 +158,30 @@ export const gallery: GalleryItem[] = [
     },
   },
   {
+    src: "/images/daire-ortak-alan.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Dairenin ortak alanı; giriş kapısı, buzdolabı ve mutfak köşesi",
+      en: "The flat's shared area with the entrance door, fridge and kitchen corner",
+    },
+  },
+  {
+    src: "/images/daire-yemek-masasi.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Ortak alandaki yemek masası, iki yana açılan oda kapıları",
+      en: "The dining table in the shared area, with room doors on either side",
+    },
+  },
+  {
+    src: "/images/daire-camasir.jpg",
+    category: "tek-kisilik",
+    alt: {
+      tr: "Mutfakta çamaşır makinesi ve katlanır çamaşır askısı",
+      en: "Washing machine and folding drying rack in the kitchen",
+    },
+  },
+  {
     src: "/images/banyo-1.jpg",
     category: "tek-kisilik",
     alt: { tr: "Daire banyosu, duş kabini ve lavabo", en: "Flat bathroom with shower cabin and basin" },
@@ -121,6 +193,22 @@ export const gallery: GalleryItem[] = [
   },
 
   /* ---------- 2) İKİ KİŞİLİK ODA ---------- */
+  {
+    src: "/images/iki-kisilik-oda.jpg",
+    category: "iki-kisilik",
+    alt: {
+      tr: "İki kişilik dairede oda; yatak, gardırop, çalışma masası ve kitaplık",
+      en: "A room in the twin flat with bed, wardrobe, desk and bookshelf",
+    },
+  },
+  {
+    src: "/images/iki-kisilik-mutfak.jpg",
+    category: "iki-kisilik",
+    alt: {
+      tr: "Dairenin mutfağı; buzdolabı, ocak ve çamaşır makinesi",
+      en: "The flat's kitchen with fridge, cooker and washing machine",
+    },
+  },
   {
     src: "/images/iki-kisilik-1.webp",
     category: "iki-kisilik",

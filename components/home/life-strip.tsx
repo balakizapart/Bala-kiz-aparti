@@ -20,7 +20,13 @@ const copy = {
     gallery: "Galeriyi gör",
     includedTitle: "Kirada ne var?",
     includedNote: "Ay sonunda ayrı fatura çıkmaz; hepsi aylık ücretin içinde.",
-    photos: ["Dairenin mutfağı, beyaz eşyalarıyla", "Daire banyosu"],
+    photos: [
+      "Dairenin ortak alanı",
+      "Dairenin mutfağı, beyaz eşyalarıyla",
+      "Mutfakta çamaşır makinesi",
+      "Ortak alandaki yemek masası",
+      "Daire banyosu",
+    ],
   },
   en: {
     eyebrow: "The flat",
@@ -29,14 +35,35 @@ const copy = {
     gallery: "See the gallery",
     includedTitle: "What's in the rent?",
     includedNote: "No separate bills at the end of the month; it is all in the monthly fee.",
-    photos: ["The flat's kitchen with white goods", "Flat bathroom"],
+    photos: [
+      "The flat's shared area",
+      "The flat's kitchen with white goods",
+      "Washing machine in the kitchen",
+      "The dining table in the shared area",
+      "Flat bathroom",
+    ],
   },
 } as const;
 
-const RATIOS = ["3/2", "3/2"] as const;
+/* Sadece yer tutucu icin; fotograf varsa kendi orani kullaniliyor.
+   Photo yalnizca su degerleri kabul ediyor: 4/5 1/1 3/4 16/9 3/2 21/9 */
+const RATIOS = ["3/2", "3/4", "3/2", "3/2", "3/2"] as const;
 
-/* Daire bolumundeki iki fotograf: mutfak ve banyo. */
-const PHOTOS = ["/images/mutfak-5.jpg", "/images/banyo-1.jpg"] as const;
+/*
+ * Daire bolumundeki bes fotograf.
+ *
+ * Sira onemli: ilki genis (lg 4 sutun) genel gorunum, ikincisi TEK dikey
+ * fotograf (mutfak-5) ve yaninda dar sutunda duruyor; kalan uc yatay
+ * fotograf alt sirada esit yukseklikte diziliyor. Sirayi degistirirsen
+ * dikey fotograf alt sirayi bozar.
+ */
+const PHOTOS = [
+  "/images/daire-ortak-alan.jpg",
+  "/images/mutfak-5.jpg",
+  "/images/daire-camasir.jpg",
+  "/images/daire-yemek-masasi.jpg",
+  "/images/banyo-1.jpg",
+] as const;
 
 export function LifeStrip({ locale }: { locale: Locale }) {
   const c = copy[locale];
@@ -68,9 +95,13 @@ export function LifeStrip({ locale }: { locale: Locale }) {
         </div>
 
         {/* Fotoğraf şeridi: kaydırdıkça hafif kayan sütunlar */}
-        <div className="mt-14 grid gap-4 sm:grid-cols-2">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
           {c.photos.map((p, i) => (
-            <Parallax key={p} amount={i % 2 === 0 ? 22 : -22}>
+            <Parallax
+              key={p}
+              amount={i % 2 === 0 ? 22 : -22}
+              className={i === 0 ? "sm:col-span-2 lg:col-span-4" : "lg:col-span-2"}
+            >
               <Reveal delay={i * 0.06}>
                 <Photo
                   src={PHOTOS[i]}
@@ -78,7 +109,11 @@ export function LifeStrip({ locale }: { locale: Locale }) {
                   caption={p}
                   ratio={RATIOS[i]}
                   tone={i}
-                  sizes="(max-width: 640px) 100vw, 46vw"
+                  sizes={
+                    i === 0
+                      ? "(max-width: 640px) 100vw, (max-width: 1024px) 94vw, 62vw"
+                      : "(max-width: 640px) 100vw, (max-width: 1024px) 46vw, 31vw"
+                  }
                   className="shadow-(--shadow-soft)"
                 />
               </Reveal>
