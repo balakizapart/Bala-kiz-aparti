@@ -97,11 +97,16 @@ export function MobileMenu({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Perde NEREDEYSE OPAK olmali. Onceden bg-ink/72 idi; arkadaki
+                sayfa yazilari perdenin icinden okunuyor ve panel yazilariyla
+                ic ice giriyordu. backdrop-blur da kaldirildi: backdrop-filter
+                tum katmani tek goruntu olarak isletiyor, panelin KENDI
+                yazilari da bulaniklasiyordu (mobil Chrome ve Safari). */}
             <button
               type="button"
               aria-label={labels.close}
               onClick={() => setOpen(false)}
-              className="absolute inset-0 bg-ink/72 backdrop-blur-md"
+              className="absolute inset-0 bg-ink/92"
             />
 
             <motion.div

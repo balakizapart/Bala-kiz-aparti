@@ -75,9 +75,9 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
             <Container size="wide" key={r.slug}>
               <article className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
                 {/* Fotoğraflar */}
-                <div className={cn("lg:col-span-7", flip && "lg:order-2 lg:col-start-6")}>
+                <div className={cn("lg:col-span-8", flip && "lg:order-2 lg:col-start-5")}>
                   <div className="grid grid-cols-12 gap-3 sm:gap-4">
-                    <Parallax amount={26} className="col-span-8">
+                    <Parallax amount={26} className="col-span-12 lg:col-span-7">
                       <TiltCard>
                         <Photo
                           alt={`${r.name[locale]}, ${r.photos[0].caption[locale]}, ${site.name}`}
@@ -85,12 +85,15 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
                           src={r.photos[0].src}
                           ratio="4/5"
                           tone={i * 2}
-                          sizes="(max-width: 1024px) 62vw, 38vw"
+                          sizes="(max-width: 1024px) 92vw, 36vw"
                           className="shadow-(--shadow-lift)"
                         />
                       </TiltCard>
                     </Parallax>
-                    <div className="col-span-4 space-y-3 sm:space-y-4">
+                    {/* Dar ekranda iki kucuk fotograf YAN YANA ve tam genislikte.
+                        Kolaj duzeni telefonda 121 piksele kadar kuculuyordu, hicbir
+                        sey secilmiyordu. lg'den itibaren eski dar sutun geri geliyor. */}
+                    <div className="col-span-12 grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-5 lg:grid-cols-1">
                       <Parallax amount={-18}>
                         <Photo
                           alt={`${r.photos[1].caption[locale]}, ${site.name}`}
@@ -98,7 +101,7 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
                           src={r.photos[1].src}
                           ratio="1/1"
                           tone={i * 2 + 1}
-                          sizes="(max-width: 1024px) 30vw, 18vw"
+                          sizes="(max-width: 1024px) 46vw, 26vw"
                         />
                       </Parallax>
                       <Parallax amount={-34}>
@@ -108,7 +111,7 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
                           src={r.photos[2].src}
                           ratio="3/4"
                           tone={i * 2 + 2}
-                          sizes="(max-width: 1024px) 30vw, 18vw"
+                          sizes="(max-width: 1024px) 46vw, 26vw"
                         />
                       </Parallax>
                     </div>
@@ -116,7 +119,7 @@ export function RoomsShowcase({ locale }: { locale: Locale }) {
                 </div>
 
                 {/* Metin */}
-                <div className={cn("lg:col-span-5", flip && "lg:order-1 lg:row-start-1")}>
+                <div className={cn("lg:col-span-4", flip && "lg:order-1 lg:row-start-1")}>
                   <Reveal>
                     <Eyebrow index={r.index}>{r.tagline[locale]}</Eyebrow>
                   </Reveal>
