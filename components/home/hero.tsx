@@ -59,7 +59,16 @@ const copy = {
   },
 } as const;
 
-/* Hero kolajindaki uc fotograf. Sira: bina girisi (buyuk kare), oda, mutfak. */
+/*
+ * Hero kolajindaki uc fotograf. Sira: bina girisi (buyuk), oda, mutfak.
+ *
+ * Dar ekranda kolaj BIRAKILIYOR: bina fotografi tam genislige, oda ve
+ * mutfak altta yan yana geciyor. 12 sutunluk kolaj telefonda kucuk
+ * fotograflari 113 piksele kadar kuculturuyordu, hicbir sey secilmiyordu.
+ * Kolaj ancak xl'den (1280px) itibaren geri geliyor. lg araliginda
+ * (1024-1279) kolaj zaten YARIM sutunda duruyordu ve fotograflar
+ * 166 piksele iniyordu; orada da yigilmis duzen kullaniliyor.
+ */
 const PHOTOS = [
   "/images/bina-2-giris.jpg",
   "/images/hero-oda.jpg",
@@ -170,7 +179,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 initial={reduce ? false : { opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="col-span-7 row-span-2"
+                className="col-span-12 xl:col-span-7 xl:row-span-2"
               >
                 <Photo
                   src={PHOTOS[0]}
@@ -179,7 +188,7 @@ export function Hero({ locale }: { locale: Locale }) {
                   ratio="4/5"
                   tone={0}
                   priority
-                  sizes="(max-width: 1024px) 58vw, 34vw"
+                  sizes="(max-width: 1024px) 92vw, (max-width: 1280px) 50vw, 34vw"
                   className="shadow-(--shadow-lift)"
                 />
               </motion.div>
@@ -189,7 +198,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 initial={reduce ? false : { opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                className="col-span-5 mt-8"
+                className="col-span-6 xl:col-span-5 xl:mt-8"
               >
                 <Photo
                   src={PHOTOS[1]}
@@ -197,7 +206,7 @@ export function Hero({ locale }: { locale: Locale }) {
                   caption={c.photos[1]}
                   ratio="1/1"
                   tone={1}
-                  sizes="(max-width: 1024px) 40vw, 24vw"
+                  sizes="(max-width: 1024px) 46vw, (max-width: 1280px) 25vw, 24vw"
                   className="shadow-(--shadow-lift)"
                 />
               </motion.div>
@@ -207,7 +216,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 initial={reduce ? false : { opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="col-span-5"
+                className="col-span-6 xl:col-span-5"
               >
                 <Photo
                   src={PHOTOS[2]}
@@ -215,7 +224,7 @@ export function Hero({ locale }: { locale: Locale }) {
                   caption={c.photos[2]}
                   ratio="3/4"
                   tone={2}
-                  sizes="(max-width: 1024px) 40vw, 24vw"
+                  sizes="(max-width: 1024px) 46vw, (max-width: 1280px) 25vw, 24vw"
                   className="shadow-(--shadow-lift)"
                 />
               </motion.div>
