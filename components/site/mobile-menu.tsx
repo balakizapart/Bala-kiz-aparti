@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion, useScroll } from "motion/react";
 import { Button } from "@/components/ui/primitives";
 import { Logo } from "./logo";
@@ -50,8 +51,12 @@ export function MobileMenu({
   labels: { menu: string; close: string; reserve: string; changeLanguage: string };
 }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+
+  // Portal ancak tarayicida kurulabilir; sunucuda document yok.
+  useEffect(() => setMounted(true), []);
 
   // Menü açıkken arkadaki sayfa kaymasın
   useEffect(() => {
@@ -72,6 +77,112 @@ export function MobileMenu({
     };
   }, [open]);
 
+  /*
+   * PERDE DOGRUDAN <body> ALTINA BASILIYOR (portal).
+   *
+   * Bu bilesen <header> icinde duruyor. Sayfa kaydirilinca header
+   * buzlu cam gorunumu icin backdrop-filter kazaniyor ve CSS kurali
+   * geregi backdrop-filter uygulanan oge, icindeki position:fixed
+   * ogeler icin YENI BIR REFERANS NOKTASI olusturuyor. O an perde
+   * ekrani degil sadece header'i kapliyordu (375x812 yerine 375x80),
+   * altta kalan sayfa aciga cikip menu yazilariyla ic ice giriyordu.
+   * Sayfanin en ustunde filtre olmadigi icin sorun orada gorunmuyor,
+   * bu yuzden fark edilmesi zor.
+   *
+   * Portal DOM agacinda perdeyi header'dan cikariyor; header'in
+   * filtresi artik ona ulasamiyor. Header'in gorunumu degismiyor.
+   */
+  const perde = (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 z-[80] lg:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Perde NEREDEYSE OPAK olmali. Onceden bg-ink/72 idi; arkadaki
+              sayfa yazilari perdenin icinden okunuyor ve panel yazilariyla
+              ic ice giriyordu. backdrop-blur da kaldirildi: backdrop-filter
+              tum katmani tek goruntu olarak isletiyor, panelin KENDI
+              yazilari da bulaniklasiyordu (mobil Chrome ve Safari). */}
+          <button
+            type="button"
+            aria-label={labels.close}
+            onClick={() => setOpen(false)}
+            className="absolute inset-0 bg-ink/92"
+          />
+
+          <motion.div
+            ref={panelRef}
+            initial={reduce ? { opacity: 0 } : { x: "100%" }}
+            animate={reduce ? { opacity: 1 } : { x: 0 }}
+            exit={reduce ? { opacity: 0 } : { x: "100%" }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-y-0 right-0 flex w-[min(24rem,88vw)] flex-col border-l border-line bg-cream px-6 pb-8 pt-6 shadow-(--shadow-lift)"
+          >
+            <div className="flex items-center justify-between">
+              <Logo className="text-[12px]" />
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={labels.close}
+                className="grid h-11 w-11 place-items-center rounded-full border border-line transition-colors duration-500 hover:border-gold hover:text-gold"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              </button>
+            </div>
+
+            <nav aria-label={labels.menu} className="mt-10">
+              <ul className="space-y-1">
+                {items.map((it, i) => (
+                  <motion.li
+                    key={it.href}
+                    initial={reduce ? false : { opacity: 0, x: 24 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.08 + i * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Link
+                      href={it.href}
+                      onClick={() => setOpen(false)}
+                      className="block border-b border-line py-4 font-display text-h3 font-semibold transition-colors duration-500 ease-(--ease-out-expo) hover:text-gold"
+                    >
+                      {it.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="mt-auto space-y-4 pt-8">
+              <Button
+                href={localePath(locale, "/on-kayit")}
+                size="lg"
+                className="w-full"
+                magnetic={false}
+              >
+                {labels.reserve}
+              </Button>
+              <Button
+                href={`tel:${site.phone}`}
+                variant="outline"
+                size="lg"
+                className="w-full"
+                magnetic={false}
+              >
+                {site.phoneDisplay}
+              </Button>
+              <LanguageSwitcher locale={locale} label={labels.changeLanguage} className="pt-2" />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+
   return (
     <>
       <button
@@ -88,94 +199,7 @@ export function MobileMenu({
         </span>
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 z-[80] lg:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Perde NEREDEYSE OPAK olmali. Onceden bg-ink/72 idi; arkadaki
-                sayfa yazilari perdenin icinden okunuyor ve panel yazilariyla
-                ic ice giriyordu. backdrop-blur da kaldirildi: backdrop-filter
-                tum katmani tek goruntu olarak isletiyor, panelin KENDI
-                yazilari da bulaniklasiyordu (mobil Chrome ve Safari). */}
-            <button
-              type="button"
-              aria-label={labels.close}
-              onClick={() => setOpen(false)}
-              className="absolute inset-0 bg-ink/92"
-            />
-
-            <motion.div
-              ref={panelRef}
-              initial={reduce ? { opacity: 0 } : { x: "100%" }}
-              animate={reduce ? { opacity: 1 } : { x: 0 }}
-              exit={reduce ? { opacity: 0 } : { x: "100%" }}
-              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute inset-y-0 right-0 flex w-[min(24rem,88vw)] flex-col border-l border-line bg-cream px-6 pb-8 pt-6 shadow-(--shadow-lift)"
-            >
-              <div className="flex items-center justify-between">
-                <Logo className="text-[12px]" />
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label={labels.close}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-line transition-colors duration-500 hover:border-gold hover:text-gold"
-                >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                    <path d="M6 6l12 12M18 6L6 18" />
-                  </svg>
-                </button>
-              </div>
-
-              <nav aria-label={labels.menu} className="mt-10">
-                <ul className="space-y-1">
-                  {items.map((it, i) => (
-                    <motion.li
-                      key={it.href}
-                      initial={reduce ? false : { opacity: 0, x: 24 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.08 + i * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <Link
-                        href={it.href}
-                        onClick={() => setOpen(false)}
-                        className="block border-b border-line py-4 font-display text-h3 font-semibold transition-colors duration-500 ease-(--ease-out-expo) hover:text-gold"
-                      >
-                        {it.label}
-                      </Link>
-                    </motion.li>
-                  ))}
-                </ul>
-              </nav>
-
-              <div className="mt-auto space-y-4 pt-8">
-                <Button
-                  href={localePath(locale, "/on-kayit")}
-                  size="lg"
-                  className="w-full"
-                  magnetic={false}
-                >
-                  {labels.reserve}
-                </Button>
-                <Button
-                  href={`tel:${site.phone}`}
-                  variant="outline"
-                  size="lg"
-                  className="w-full"
-                  magnetic={false}
-                >
-                  {site.phoneDisplay}
-                </Button>
-                <LanguageSwitcher locale={locale} label={labels.changeLanguage} className="pt-2" />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {mounted ? createPortal(perde, document.body) : null}
     </>
   );
 }
